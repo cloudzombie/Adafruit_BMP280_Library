@@ -39,7 +39,7 @@ void loop() {
 
 void checkEnvironment() {
 
-    Particle.publish("EnvironmentData", String::format("Temp: %.1f °C / %.1f °F, Pressure %.1f mbar, Humidity %.1f %%", cTemp, fTemp, pressure, humidity), PRIVATE);
+  Particle.publish("EnvironmentData", String::format("Temp: %.1f °C / %.1f °F, Pressure %.1f mbar, Humidity %.1f %%", cTemp, fTemp, pressure, humidity), PRIVATE);
 }
 
 float cToF(float c) {
