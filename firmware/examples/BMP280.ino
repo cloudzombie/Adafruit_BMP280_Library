@@ -7,7 +7,7 @@
 // #define BMP_CS A2
 // #define BMP_SCK A3
 // #define BMP_MISO A4
-// #define BMP_MOSI A5 
+// #define BMP_MOSI A5
 
 Adafruit_BMP280 bmp; // I2C
 //Adafruit_BMP280 bmp(BMP_CS); // hardware SPI
@@ -39,10 +39,7 @@ void loop() {
 
 void checkEnvironment() {
 
-  Particle.publish("DEBUG", "checking the environment...");
-  Particle.publish("environment/temperature", String(cToF(bmp.readTemperature())));
-  Particle.publish("environment/pressure", String(pToHg(bmp.readPressure())));
-  Particle.publish("environment/altitude", String(bmp.readAltitude(seaLevelhPa)));
+    Particle.publish("EnvironmentData", String::format("Temp: %.1f °C / %.1f °F, Pressure %.1f mbar, Humidity %.1f %%", cTemp, fTemp, pressure, humidity), PRIVATE);
 }
 
 float cToF(float c) {
