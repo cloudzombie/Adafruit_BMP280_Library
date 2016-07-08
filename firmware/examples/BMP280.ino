@@ -2,7 +2,7 @@
 // before the particular .h file.
 
 #include "Adafruit_BMP280/Adafruit_Sensor.h"
-#include "Adafruit_BMP280/Adafruit_BMP280.h"
+#include "Adafruit_BMP280/Adafruit_BMP280_Photon.h"
 
 // #define BMP_CS A2
 // #define BMP_SCK A3
